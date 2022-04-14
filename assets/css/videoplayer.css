@@ -481,9 +481,9 @@ video {
     display: none !important
 }
 
-/* .vjs-picture-in-picture-control {
+.vjs-picture-in-picture-control {
     display: none !important
-} */
+}
 
 @media(max-width:499px) {
 
@@ -582,8 +582,20 @@ button.vjs-button:hover,
     width: 1.4em !important
 }
 
-.vjs-icon-cog:before {
+/* .vjs-icon-cog:before {
     content: "\f110";
     font-size: 1.8em;
     line-height: 1.67;
+} */
+
+.vjs-icon-cog:before {
+    content: "\f110";
+    font-size: 2.8em;
+    line-height: 1.67;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
