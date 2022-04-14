@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/app.css">
+    <!-- Video JS Css -->
+    <!-- <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" /> -->
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-seek-buttons/dist/videojs-seek-buttons.css">
+
+    <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/videoplayer.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-32x32.png">
+    <title>video</title>
+
+
+
+
+</head>
+
+<body>
+
+    <section>
+        <video id="video" class="video-js vjs-default-skin rounded-md video-modal-box-ui" preload="none" poster=""
+            crossorigin="true" controls width="640" height="268" controls>
+            <source src="https://uptv.upera.tv/2771740-0-hls.m3u8" type="application/x-mpegURL" id="source">
+        </video>
+    </section>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js"></script> -->
+
+
+    <!-- Video JS Script -->
+    <!-- <script src="https://vjs.zencdn.net/7.11.5/video.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.0.0/video.min.js"
+        integrity="sha512-LiILFcpZ9QKSH41UkK59Zag/7enHzqjr5lO2M0wGqGn8W19A/x2rV3iufAHkEtrln+Bt+Zv1U6NlLIp+lEqeWQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+        <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"
+        integrity="sha512-R1+Pgd+uyqnjx07LGUmp85iW8MSL1iLR2ICPysFAt8Y4gub8C42B+aNG2ddOfCWcDDn1JPWZO4eby4+291xP9g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.9.0/videojs.ads.min.js" integrity="sha512-ff4Rc39SC+LyUOUEKUvQ5VW/BMtzy+p3/zN+zB/VloiEfFpkY4JseoJC2TtwJTnn2PrSsm+dvSW6S4yV6uADUA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+
+    <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+
+
+
+    <!-- <script src="https://unpkg.com/video.js@7.11.4/dist/video.js"></script> -->
+    <script src="https://unpkg.com/videojs-seek-buttons@2.2.0/dist/videojs-seek-buttons.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.js">
+    </script>
+
+    <!-- <script src="assets/js/app.js"></script> -->
+
+
+
+
+
+
+    <script>
+        var player = videojs('video', {
+            adTagUrl : "https://www.uptvs.com/Ads1.xml"
+        });
+        //player.ads()
+        player.on(['contentupdate'], function() {
+            console.log("www")
+            player.ima.initializeAdDisplayContainer();
+            player.ima.requestAds();      
+            //player.play()
+          });
+        console.log(player.qualityLevels())
+
+    </script>
+</body>
+
+</html>
