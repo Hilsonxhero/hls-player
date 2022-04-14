@@ -76,12 +76,17 @@
 
     <script>
         var player = videojs('video', {
-            adTagUrl: "https://www.uptvs.com/Ads1.xml"
+            // adTagUrl: "https://www.uptvs.com/Ads1.xml"
+            controlBar: {
+                volumePanel: {
+                    inline: false
+                }
+            },
         });
         var seekButtons = (window.seekButtons = player.seekButtons({
             forward: 10,
             back: 10,
-          }));
+        }));
         console.log(player.qualityLevels())
     </script>
 </body>
