@@ -38,44 +38,22 @@
         </video>
     </section>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js"></script> -->
-
-
-    <!-- Video JS Script -->
-    <!-- <script src="https://vjs.zencdn.net/7.11.5/video.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.0.0/video.min.js"
-        integrity="sha512-LiILFcpZ9QKSH41UkK59Zag/7enHzqjr5lO2M0wGqGn8W19A/x2rV3iufAHkEtrln+Bt+Zv1U6NlLIp+lEqeWQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <!-- 
-    <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script> -->
-
     <script src='https://vjs.zencdn.net/7.4.1/video.js'></script>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"
-        integrity="sha512-R1+Pgd+uyqnjx07LGUmp85iW8MSL1iLR2ICPysFAt8Y4gub8C42B+aNG2ddOfCWcDDn1JPWZO4eby4+291xP9g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.9.0/videojs.ads.min.js"
         integrity="sha512-ff4Rc39SC+LyUOUEKUvQ5VW/BMtzy+p3/zN+zB/VloiEfFpkY4JseoJC2TtwJTnn2PrSsm+dvSW6S4yV6uADUA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.4/dist/videojs-contrib-quality-levels.js">
+    <script src="assets/js/quality-levels.js">
     </script>
-    <!-- <script
-        src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js">
-    </script> -->
-    <script src="https://vod.dev/dist/videojs-http-source-selector.js"></script>
+
+    <script src="assets/js/source-selector.js"></script>
 
 
-
-    <!-- <script src="https://unpkg.com/video.js@7.11.4/dist/video.js"></script> -->
-    <script src="https://unpkg.com/videojs-seek-buttons@2.2.0/dist/videojs-seek-buttons.js"></script>
+    <script src="assets/js/seek-buttons.js"></script>
 
 
     <!-- <script src="assets/js/app.js"></scrip> -->
-
-
-
 
 
 
@@ -91,7 +69,7 @@
 
         player.httpSourceSelector();
 
-        
+
         var seekButtons = (window.seekButtons = player.seekButtons({
             forward: 10,
             back: 10,
