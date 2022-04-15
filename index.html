@@ -58,12 +58,28 @@
                     inline: false
                 }
             },
+
+            //nativeControlsForTouch : true,
+
             sources: {
                 src: "https://onlines.uptvs.com/stream/movie/The_Legend_of_La_Llorona_2022_UPTV.co_Sub/all.m3u8"
             }
         }, function () {
 
             var player = this;
+            console.log("player", player)
+
+            this.on('touchstart', function (e) {
+                if (e.target.nodeName === 'VIDEO') {
+                    console.log("here", player.pause)
+
+                    if (player.paused()) {
+                        player.play();
+                    } else {
+                        player.pause();
+                    }
+                }
+            })
 
             var vastAd = player.vastClient({
                 adTagUrl: "https://www.uptvs.com/Ads1.xml",
@@ -84,9 +100,7 @@
     </script>
 
     <script>
-        videojs('video').ready(function () {
 
-        })
     </script>
 
 
@@ -194,7 +208,7 @@
                         key: function () {
                             console.log(
                                 'I have a malformed customKey. The Key function must return a boolean.'
-                                );
+                            );
                         },
                         handler: function (player, options, event) {
                             //Empty

@@ -630,6 +630,9 @@ button.vjs-button:hover,
     .vjs-volume-panel {
         display: none !important;
     }
+    .vjs-http-source-selector button:before{
+        content: unset !important;
+    }
 }
 
 
