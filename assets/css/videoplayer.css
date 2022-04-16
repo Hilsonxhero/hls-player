@@ -634,6 +634,15 @@ button.vjs-button:hover,
     .vjs-http-source-selector button:before {
         content: unset !important;
     }
+
+    .video-js .vjs-overlay-bottom {
+
+        margin-left: -3.5% !important;
+    }
+
+    .video-js .vjs-overlay-no-background {
+        max-width: 100% !important;
+    }
 }
 
 
@@ -900,3 +909,5 @@ div.vast-skip-button {
 .vjs-ad-playing .reject-episode{
     display: none;
 }
+
+
