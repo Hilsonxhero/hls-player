@@ -186,11 +186,11 @@ button {
     color: #41b883 !important;
     font-size: 1.2em;
     top: -.4em !important;
-   
+
 }
 
 .vjs-ad-playing .vjs-play-progress:before,
-.vjs-ad-playing .vjs-progress-control .vjs-play-progress:before{
+.vjs-ad-playing .vjs-progress-control .vjs-play-progress:before {
     color: #EADB69 !important;
 }
 
@@ -630,7 +630,8 @@ button.vjs-button:hover,
     .vjs-volume-panel {
         display: none !important;
     }
-    .vjs-http-source-selector button:before{
+
+    .vjs-http-source-selector button:before {
         content: unset !important;
     }
 }
@@ -813,4 +814,34 @@ div.vast-skip-button {
 
 .js-time-count {
     margin-left: .3rem;
+}
+
+.vjs-overlay {
+    width: 33%;
+}
+
+.dir-rtl {
+    direction: rtl;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.video-js .vjs-overlay-top-left {
+    top: 5px;
+    right: 5px;
+}
+
+.text-left{
+    text-align: left;
+}
+.episod-title{
+    font-size: .9rem;
+    transform: translateY(3px);
+}
+
+.episode-title-header{
+    margin: 2rem;
+    font-size: 1.5rem;
 }

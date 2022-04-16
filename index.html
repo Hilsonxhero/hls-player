@@ -19,6 +19,10 @@
 
     <link rel="stylesheet" media="screen" href="assets/fonts/boxicons/css/boxicons.min.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-overlay/1.1.4/videojs-overlay.css"
+        integrity="sha512-EM37fvCe8JZsfwiXYX9neImZ3oiwbmH16VGG8PMi0HhBU9TJi+/nVQ9+bNSwheGFfUsFqg36L9eEkDO3bjsTzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
 
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-32x32.png">
@@ -47,6 +51,10 @@
 
     <script src="https://www.nuevodevel.com/vdjs/v9.6.0/plugins/vast.vpaid.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-overlay/1.1.4/videojs-overlay.min.js"
+        integrity="sha512-Irzpe7nqWcHdM2s+j7WqeLatQZiRT5IL6p7CUodqQdopoZc2Nf1Gb515BCP603S7RdfhPTIuKXXFRwQOnvNBeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- <script src="assets/js/app.js"></scrip> -->
 
 
@@ -67,12 +75,9 @@
         }, function () {
 
             var player = this;
-            console.log("player", player)
 
             this.on('touchstart', function (e) {
                 if (e.target.nodeName === 'VIDEO') {
-                    console.log("here", player.pause)
-
                     if (player.paused()) {
                         player.play();
                     } else {
@@ -81,17 +86,47 @@
                 }
             })
 
-            var vastAd = player.vastClient({
-                adTagUrl: "https://www.uptvs.com/Ads1.xml",
-                playAdAlways: true,
-                adsEnabled: true,
-                skipText: '<span class="js-time-count">%%TIME%%</span> ثانیه',
-                skipButtonText: "رد کردن تیتراژ"
+            player.overlay({
+                overlays: [
+                {
+    
+                    content: `<div class="dir-rtl text-right episode-title-header">قسمت اول سریال </div>`,
+                    start: 1,
+                    end: 50,
+                    align: "top-right",
+                    class : "",
+                    showBackground : false,
+                },
+
+                {
+    
+                    content: `<div class="text-left episod-title">قسمت اول سریال </div>`,
+                    start: 1,
+                    end: 50,
+                    //align: "top-right",
+                    align: "bottom",
+                    class : "",
+                    //attachToControlBar : true
+                    showBackground : false,
+                    attachToControlBar : true,
+                }
+                
+                ]
             });
+
+            /* var vastAd = player.vastClient({
+                 adTagUrl: "https://www.uptvs.com/Ads1.xml",
+                 playAdAlways: true,
+                 adsEnabled: true,
+                 skipText: '<span class="js-time-count">%%TIME%%</span> ثانیه',
+                 skipButtonText: "رد کردن تبلیغ"
+             }); */
 
         });
 
         player.httpSourceSelector();
+
+        console.log("overlay", player.overlay())
 
         var seekButtons = (window.seekButtons = player.seekButtons({
             forward: 10,
