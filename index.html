@@ -10,18 +10,16 @@
 
     <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-seek-buttons/dist/videojs-seek-buttons.css">
+    <link rel="stylesheet" href="assets/css/videojs-seek-buttons.css">
 
-    <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
+    <link href="assets/css/quality-selector.css" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/videoplayer.css">
     <link rel="stylesheet" href="https://vod.dev/dist/videojs-http-source-selector.css">
 
     <link rel="stylesheet" media="screen" href="assets/fonts/boxicons/css/boxicons.min.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-overlay/1.1.4/videojs-overlay.css"
-        integrity="sha512-EM37fvCe8JZsfwiXYX9neImZ3oiwbmH16VGG8PMi0HhBU9TJi+/nVQ9+bNSwheGFfUsFqg36L9eEkDO3bjsTzg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/videojs-overlay.css" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
 
@@ -51,13 +49,9 @@
 
     <script src="https://www.nuevodevel.com/vdjs/v9.6.0/plugins/vast.vpaid.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-overlay/1.1.4/videojs-overlay.min.js"
-        integrity="sha512-Irzpe7nqWcHdM2s+j7WqeLatQZiRT5IL6p7CUodqQdopoZc2Nf1Gb515BCP603S7RdfhPTIuKXXFRwQOnvNBeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/videojs-overlay.min.js"></script>
 
     <!-- <script src="assets/js/app.js"></scrip> -->
-
-
 
     <script>
         var player = videojs('video', {
@@ -76,6 +70,8 @@
 
             var player = this;
 
+            console.log("player", player)
+
             this.on('touchstart', function (e) {
                 if (e.target.nodeName === 'VIDEO') {
                     if (player.paused()) {
@@ -87,40 +83,51 @@
             })
 
             player.overlay({
-                overlays: [
-                {
-    
-                    content: `<div class="dir-rtl text-right episode-title-header">قسمت اول سریال </div>`,
-                    start: 1,
-                    end: 50,
-                    align: "top-right",
-                    class : "",
-                    showBackground : false,
-                },
+                overlays: [{
 
-                {
-    
-                    content: `<div class="text-left episod-title">قسمت اول سریال </div>`,
-                    start: 1,
-                    end: 50,
-                    //align: "top-right",
-                    align: "bottom",
-                    class : "",
-                    //attachToControlBar : true
-                    showBackground : false,
-                    attachToControlBar : true,
-                }
-                
+                        content: `<div class="dir-rtl text-right episode-title-header">قسمت اول سریال </div>`,
+                        start: 'play',
+                        end: 'ControlBar',
+                        align: "top-right",
+                        class: "",
+                        showBackground: false,
+                        attachToControlBar: true,
+                    },
+
+                    {
+                        content: `<div class="text-left episod-title">قسمت اول سریال </div>`,
+                        start: "playing",
+                        end: "end",
+                        align: "bottom",
+                        class: "",
+                        showBackground: false,
+                        attachToControlBar: true,
+                    },
+                    {
+                        content: `<div class="text-left reject-episode" id="js-reject-episode"> رد کردن تیتراژ <i class='bx bx-fast-forward-circle'></i></div>`,
+                        start: 1,
+                        end: 30,
+                        align: "bottom-left",
+                        class: "",
+                        showBackground: false,
+                        //attachToControlBar : true,
+                    }
+
                 ]
             });
 
-            /* var vastAd = player.vastClient({
-                 adTagUrl: "https://www.uptvs.com/Ads1.xml",
-                 playAdAlways: true,
-                 adsEnabled: true,
-                 skipText: '<span class="js-time-count">%%TIME%%</span> ثانیه',
-                 skipButtonText: "رد کردن تبلیغ"
-             }); */
+
+            document.getElementById("js-reject-episode").addEventListener("click", function () {
+                player.currentTime(50);
+            })
+
+            var vastAd = player.vastClient({
+                adTagUrl: "https://www.uptvs.com/Ads1.xml",
+                playAdAlways: true,
+                adsEnabled: true,
+                skipText: '<span class="js-time-count">%%TIME%%</span> ثانیه',
+                skipButtonText: "رد کردن تبلیغ"
+            });
 
         });
 
@@ -202,7 +209,7 @@
                         }
                     },
 
-                    // Override number keys example from https://github.com/ctd1500/videojs-hotkeys/pull/36
+    
                     numbersKey: {
                         key: function (event) {
                             // Override number keys

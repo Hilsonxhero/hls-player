@@ -731,17 +731,17 @@ div.vjs-vpaid-ad .vjs-tech {
 div.vast-skip-button {
     display: block;
     position: absolute;
-    bottom: 20%;
-    left: 0;
-    background-color: #76787F;
+    /* bottom: 20%; */
+    bottom: 7.6rem;
+    right: 0;
+    /* background-color: #76787F; */
     color: white;
-    font-size: 15px;
-    font-weight: bold;
+    /* font-size: 15px; */
+    /* font-weight: bold; */
     width: auto;
-    padding: 8px;
+    /* padding: 8px; */
     z-index: 2;
     margin: 0 .5rem;
-    /* border: 1px solid white; */
     border-right: none;
     border-radius: .3rem;
 }
@@ -749,9 +749,9 @@ div.vast-skip-button {
 .vast-skip-button.enabled {
     cursor: pointer;
     color: #fff;
-    background: #76787F;
-    color: rgba(255, 255, 255, .8);
-    border-radius: .3rem;
+    /* background: #76787F; */
+    /* color: rgba(255, 255, 255, .8); */
+    /* border-radius: .3rem; */
 }
 
 .vast-skip-button.enabled:hover {
@@ -781,7 +781,7 @@ div.vast-skip-button {
     top: 1px;
     margin-left: 8px;
     top: .3rem;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
 }
 
 /* Ad loading */
@@ -844,4 +844,59 @@ div.vast-skip-button {
 .episode-title-header{
     margin: 2rem;
     font-size: 1.5rem;
+}
+
+.vjs-user-inactive .episode-title-header{
+    display: none;
+}
+
+
+
+.reject-episode{
+    font-size: 1rem;
+    margin-left: 1rem;
+    background-color: #333;
+    transition: all .2s .1s ease;
+    padding: 9px 10px;
+    display: table;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.reject-episode i {
+    margin-left: .5rem;
+}
+
+.video-js .vjs-overlay-bottom-left {
+    bottom: 11.5em !important;
+    left: 5px;
+}
+
+.vjs-overlay {
+    /* width: 33%; */
+    width: unset !important;
+}
+.vast-skip-button{
+    font-size: 1rem;
+    margin-left: 1rem;
+    background-color: #333;
+    transition: all .2s .1s ease;
+    padding: 9px 10px;
+    display: table;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center
+}
+.vast-skip-button-text{
+
+}
+
+.vjs-ad-playing .reject-episode{
+    display: none;
 }
