@@ -740,20 +740,17 @@ div.vjs-vpaid-ad .vjs-tech {
 div.vast-skip-button {
     display: block;
     position: absolute;
-    /* bottom: 20%; */
     bottom: 7.6rem;
     right: 0;
-    /* background-color: #76787F; */
     color: white;
-    /* font-size: 15px; */
-    /* font-weight: bold; */
     width: auto;
-    /* padding: 8px; */
     z-index: 2;
     margin: 0 .5rem;
     border-right: none;
     border-radius: .3rem;
 }
+
+
 
 .vast-skip-button.enabled {
     cursor: pointer;
@@ -908,6 +905,21 @@ div.vast-skip-button {
 
 .vjs-ad-playing .reject-episode{
     display: none;
+}
+
+@media (min-width : 1500px) {
+    div.vast-skip-button {
+        bottom: 10.6rem;
+    }
+}
+.vjs-http-source-selector .vjs-menu li {
+    list-style: none;
+    margin: 0;
+    padding: 0.2em 0;
+    line-height: .8rem !important;
+    font-size: .9em;
+    text-align: center;
+    text-transform: lowercase;
 }
 
 
