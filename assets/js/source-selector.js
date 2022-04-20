@@ -156,7 +156,7 @@
   
         if (levels.length > 1) {
           menuItems.push(new SourceMenuItem(this.player_, {
-            label: 'Auto',
+            label: 'خودکار',
             index: levels.length,
             selected: false,
             sortVal: 99999

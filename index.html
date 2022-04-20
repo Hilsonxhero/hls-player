@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@
 <body>
 
     <section>
-        <video id="video" class="video-js vjs-default-skin rounded-md video-modal-box-ui" preload="none" poster=""
+        <video id="video" class="video-js vjs-default-skin rounded-md video-modal-box-ui" preload="none" poster="https://www.uptvs.com/wp-contents/uploads/2022/03/Halo-2022-Poster-1.jpg"
             crossorigin="true" controls width="640" height="268" controls>
 
         </video>
@@ -85,7 +85,9 @@
             player.overlay({
                 overlays: [{
 
-                        content: `<div class="dir-rtl text-right episode-title-header">قسمت اول سریال </div>`,
+                        content: `<div class="dir-rtl text-right episode-title-header">قسمت اول سریال 
+                            <p class="des">فصل اول | قسمت 04 </p>
+                        </div>`,
                         start: 'play',
                         end: 'ControlBar',
                         align: "top-right",
@@ -94,15 +96,6 @@
                         attachToControlBar: true,
                     },
 
-                    {
-                        content: `<div class="text-left episod-title">قسمت اول سریال </div>`,
-                        start: "playing",
-                        end: "end",
-                        align: "bottom",
-                        class: "",
-                        showBackground: false,
-                        attachToControlBar: true,
-                    },
                     {
                         content: `<div class="text-left reject-episode" id="js-reject-episode"> رد کردن تیتراژ <i class='bx bx-fast-forward-circle'></i></div>`,
                         start: 1,
@@ -121,17 +114,27 @@
                 player.currentTime(50);
             })
 
-            var vastAd = player.vastClient({
-                adTagUrl: "https://www.uptvs.com/Ads1.xml",
-                playAdAlways: true,
-                adsEnabled: true,
-                skipText: '<span class="js-time-count">%%TIME%%</span> ثانیه',
-                skipButtonText: "رد کردن تبلیغ"
-            });
+            /* var vastAd = player.vastClient({
+                 adTagUrl: "https://www.uptvs.com/Ads1.xml",
+                 playAdAlways: true,
+                 adsEnabled: true,
+                 skipText: '<span class="js-time-count">%%TIME%%</span> ثانیه',
+                 skipButtonText: "رد کردن تبلیغ"
+             }); */
 
         });
 
         player.httpSourceSelector();
+
+        player.controlBar.addChild('button', {
+            'el': videojs.createEl('button', {
+                className: 'vjs-next-episode-control vjs-control vjs-button',
+                innerHTML: `<a href="" aria-hidden="true" class="vjs-icon-placeholder">
+                 
+                </a>`,
+                'role': 'button'
+            })
+        });
 
         console.log("overlay", player.overlay())
 
@@ -209,7 +212,7 @@
                         }
                     },
 
-    
+
                     numbersKey: {
                         key: function (event) {
                             // Override number keys

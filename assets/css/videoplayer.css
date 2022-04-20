@@ -923,3 +923,18 @@ div.vast-skip-button {
 }
 
 
+.vjs-next-episode-control .vjs-icon-placeholder:before {
+    font-family: boxicons!important;
+    content: "\ec11";
+}
+
+p.des {
+    display: block;
+    margin-top: 1em;
+    color: #bbc1c6;
+    font-size: 13px;
+}
+
+.vjs-menu .vjs-menu-content {
+    font-family: iranyekanBakh !important;
+}
