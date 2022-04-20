@@ -643,6 +643,10 @@ button.vjs-button:hover,
     .video-js .vjs-overlay-no-background {
         max-width: 100% !important;
     }
+
+    .vjs-http-source-selector{
+     display: none;
+    }
 }
 
 
